@@ -26,9 +26,7 @@ test("test2", async ({ page }) => {
   await page.getByPlaceholder('Пароль').fill('password123');
   // нажимаем на кнопку Войти
   await page.getByTestId('login-submit-btn').click();
-
-  
-  await page.getByTestId('login-error-hint').isVisible();
+  expect(await page.getByTestId('login-error-hint').isVisible());
 
 }
 )
